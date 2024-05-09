@@ -75,7 +75,7 @@ const Navbar = () => {
             </div>
         </div>
         <div className="w-[30%] relative">
-          <div className="flex justify-end gap-x-2 items-center">
+          <div className="flex items-center justify-end gap-x-2">
           <div className="flex" ref={userAccref}>
            <FaUser/>
             <RiArrowDownSFill/>
