@@ -9,10 +9,10 @@ const Ads = () => {
   return (
     <Container>
        <Flex className="justify-between lg:mt-[90px] mt-[30px]">
-           <div className="w-[49%]">
+           <div className="w-[48%]">
               <img className='w-full' src={Lamp} alt="" />
            </div>
-           <div className="w-[49%]">
+           <div className="w-[48%]">
               <div className="w-full">
                 <img className='w-full' src={Clock} alt="" />
               </div>

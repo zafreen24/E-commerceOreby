@@ -68,7 +68,7 @@ const Navbar = () => {
         </div>
         <div className="w-[40%]">
             <div className="relative">
-                <input placeholder='search...' type="search" className='w-full h-[50px] border-2 border-[#262626] outline-none px-2'/> 
+                <input placeholder='search products..' type="search" className='w-full h-[50px] border-2 border-[#fff] outline-none px-2'/> 
                 <div className="absolute top-[50%] right-4 translate-y-[-50%]">
                     <FaSearch/>
                 </div>
