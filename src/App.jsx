@@ -1,25 +1,24 @@
-import Header from "./components/Header"
-import Navbar from "./components/Navbar"
-import Banner from "./components/Banner"
-import Ads from "./components/Ads"
-import Newarrivals from "./components/Newarrivals"
-import Clock from "./components/Clock"
+import RootLayout from "./components/RootLayout";
+import Home from "./pages/Home";
+import { Route, RouterProvider, createRoutesFromElements,  createBrowserRouter } from "react-router-dom"
+import Product from "./pages/Product"
+import ProductDetails from "./pages/ProductDetails";
+
+let router = createBrowserRouter(createRoutesFromElements(
+  <Route element={<RootLayout/>}>
+     <Route index element={<Home />}></Route>
+     <Route path="/product" element={<Product />}></Route>
+     <Route path="/product/:id" element={<ProductDetails/>}></Route>
+
+  </Route>
+))
 
 function App() {
-
-
   return (
     <>
-      <Header/>
-      <Navbar/>
-      <Banner/>
-      <Ads/>
-      <Newarrivals/>
-      <Clock/>
-    
+      <RouterProvider router={router}/>
     </>
-  )
+  );
 }
 
-
-export default App
+export default App;

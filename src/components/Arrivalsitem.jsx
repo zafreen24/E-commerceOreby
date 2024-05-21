@@ -7,9 +7,9 @@ import Item1 from "../assets/Pic1.png";
 const Arrivalsitem = ({ item }) => {
 
   return (
-    <div className="w-[24%] py-5">
+    <div className="lg:w-[94%] py-5">
       <div className="relative overflow-hidden group">
-        <img src={item.thumbnail} className='h-[300px]' alt="" />
+        <img src={item.thumbnail}className='h-[300px]' alt="" />
         <div className="bg-white  absolute left-0 h-[120px] bottom-[-120px] w-full duration-700 ease-in-out group-hover:bottom-[0px] flex items-center justify-end">
           <ul className="pr-5">
             <li className="flex items-center hover:text-[#767676] duration-300 justify-end gap-x-4">

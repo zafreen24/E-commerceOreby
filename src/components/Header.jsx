@@ -5,6 +5,7 @@ import Logo from '../assets/Logo.png'
 import { RxCross1 } from "react-icons/rx";
 import { FaBars } from "react-icons/fa6";
 import {useState} from "react"
+import {Link} from 'react-router-dom'
 
 const Header = () => {
 
@@ -22,8 +23,8 @@ const Header = () => {
             absolute lg:static duration-700 ease-out text-white lg:text-[#262626]
             ${show == true ? "bg-[gray] left-0 top-[50px] w-full" : " top-[50px] left-[-200px]" }`}>
 
-                <li className='font-sans text-[16px] text-[#767676] hover:text-[#262626]'>Home</li>
-                <li className='font-sans text-[16px] text-[#767676] hover:text-[#262626]'>Shop</li>
+                <li className='font-sans text-[16px] text-[#767676] hover:text-[#262626]'><Link to="/">Home</Link></li>
+                <li className='font-sans text-[16px] text-[#767676] hover:text-[#262626]'><Link to="/product">Shop</Link></li>
                 <li className='font-sans text-[16px] text-[#767676] hover:text-[#262626]'>About</li>
                 <li className='font-sans text-[16px] text-[#767676] hover:text-[#262626]'>Contacts</li>
                 <li className='font-sans text-[16px] text-[#767676] hover:text-[#262626]'>Journal</li>
