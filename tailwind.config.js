@@ -1,5 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  build: {
+    rollupOptions: {
+      external: ['react-redux']
+    }
+  },
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
