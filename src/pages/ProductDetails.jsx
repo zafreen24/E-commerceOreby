@@ -91,10 +91,6 @@ let handleAddTocart = (item) => {
                     <a className='py-[16px] px-[45px] border-2 border-[#262626] inline-block ms-4  hover:bg-[#262626] hover:text-[#fff] cursor-pointer duration-300 ease-in-out'>Add to Cart</a>
                     </Link>
                 </div>
-                   
-                
-
-
           <Faccordian/>
 
 

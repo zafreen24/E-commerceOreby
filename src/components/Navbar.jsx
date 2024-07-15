@@ -9,16 +9,18 @@ import {useRef} from "react"
 import {useEffect} from "react"
 import CartImg from "../assets/cartimg.png"
 import { RxCross1 } from "react-icons/rx";
+import {useSelector} from "react-redux"
 
 const Navbar = () => {
-
+    
+    let data = useSelector((state)=> state.product.cartItem)
     let [cartShow, setCartShow] = useState(false)
     let [usercartShow, setUsercartShow] = useState(false)
     let [userShow, setuserShow] = useState(false)
     let cartref = useRef()
     let userref = useRef()
     let userAccref = useRef()
-
+    
 
     useEffect(()=>{
        document.addEventListener("click",(e)=>{
@@ -81,7 +83,17 @@ const Navbar = () => {
             <RiArrowDownSFill/>
            </div>
            <div ref={userref} className="">
-           <FaCartPlus/>
+            <div className="relative">
+              <FaCartPlus/>
+              {data.length > 0 ? 
+              <div className="absolute h-[20px] w-[20px]
+               bg-[#8888fe] left-[20px] top-[-15px] rounded-full text-center text-[white]">
+                 {data.length}
+                 
+              </div> : "" }
+            </div>
+          
+           
            </div>
            </div>
            {userShow &&
