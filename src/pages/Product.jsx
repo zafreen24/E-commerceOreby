@@ -9,6 +9,8 @@ import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import Post from '../components/pagination/Post';
 import PaginationArea from '../components/pagination/PaginationArea';
+import { FaList } from "react-icons/fa";
+import { RiLayoutGridFill } from "react-icons/ri";
 
 const Products = () => {
   let data = useContext(apiData)
@@ -18,6 +20,7 @@ const Products = () => {
   let [catshow, setCatShow] = useState(false)
   let [category,setCategory] = useState([])
   let [categorySearchFilter,setCategorySearchFilter] = useState([])
+  let [multiList, setMultiList] = useState('')
   
   
   let lastPage = currentPage * perPage
@@ -55,6 +58,10 @@ const Products = () => {
 let handleSubcate = (citem) =>{
  let categoryFilter = data.filter((item)=> item.category == citem)
  setCategorySearchFilter(categoryFilter)
+}
+
+let handleList = () =>{
+  setMultiList("activeList");
 }
  
   let [colshow, setColShow] = useState(false)
@@ -123,8 +130,11 @@ let handleSubcate = (citem) =>{
             <div className="lg:w-[78%] w-[100%]">
               <div className="lg:flex justify-between lg:pb-[50px] pb-[20px] pt-[10px]">
                 <div className="flex gap-x-5 lg:justify-normal justify-center lg:w-[30%] w-100%">
-                  <div className="lg:h-[46px] h-[26px] lg:w-[46px] w-[26px] flex justify-center items-center text-[#737373] hover:text-white duration-300 ease-in-out hover:bg-black border-[1px] border-[#737373] text-[20px]"><PiSquaresFourFill /></div>
-                  <div className="lg:h-[46px] h-[26px] lg:w-[46px] w-[26px] flex justify-center items-center text-[#737373] hover:text-white duration-300 ease-in-out hover:bg-black border-[1px] border-[#737373] text-[20px]"><GrSort /></div>
+                  <div onClick={()=>setMultiList("")} className={`lg:h-[46px] h-[26px] lg:w-[46px] w-[26px] flex justify-center items-center text-[#737373]
+                  ${multiList == "activeList" ? "bg-white text-white" : "bg-black text-white"}
+                  border-[1px] border-[#737373] text-[20px]`}><PiSquaresFourFill /></div>
+                  <div onClick={handleList} className="lg:h-[46px] h-[26px] lg:w-[46px] w-[26px] flex justify-center items-center text-[#737373] hover:text-white duration-300 ease-in-out hover:bg-black 
+                  border-[1px] border-[#737373] text-[20px]"><GrSort /></div>
                 </div>
                 <div className="flex lg:justify-end justify-between lg:gap-x-10 lg:w-[70%] w-[100%] pt-[20px] lg:pt-0">
                   <div className="">
@@ -146,9 +156,9 @@ let handleSubcate = (citem) =>{
                 </div>
               </div>
               <Flex>
-                <div className="">
-                  <div className="flex flex-wrap justify-between">
-                    <Post allData={allData} categorySearchFilter={categorySearchFilter}/>
+                <div className="lg:w-[80%] w-full">
+                  <div className="lg:flex  justify-between pt-[10px] mt-[50px] pl-10">
+                    <Post allData={allData} categorySearchFilter={categorySearchFilter} multiList={multiList}/>
                   </div>
                   <div className="text-end">
                     <PaginationArea pageNumber={pageNumber} paginate={paginate} currentPage={currentPage} next={next} previous={previous} />

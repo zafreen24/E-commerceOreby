@@ -10,7 +10,7 @@ import {Link} from 'react-router-dom'
 const Header = () => {
 
     let [show, setShow] = useState(false)
-
+    
   return (
     <header className='lg:h-[80px] h-[20px]'>
             <Container>
@@ -25,8 +25,8 @@ const Header = () => {
 
                 <li className='font-sans text-[16px] text-[#767676] hover:text-[#262626]'><Link to="/">Home</Link></li>
                 <li className='font-sans text-[16px] text-[#767676] hover:text-[#262626]'><Link to="/product">Shop</Link></li>
-                <li className='font-sans text-[16px] text-[#767676] hover:text-[#262626]'>About</li>
-                <li className='font-sans text-[16px] text-[#767676] hover:text-[#262626]'>Contacts</li>
+                <li className='font-sans text-[16px] text-[#767676] hover:text-[#262626]'><Link to="/about">About</Link></li>
+                <li className='font-sans text-[16px] text-[#767676] hover:text-[#262626]'><Link to="/contact">Contact</Link></li>
                 <li className='font-sans text-[16px] text-[#767676] hover:text-[#262626]'>Journal</li>
                 
             </ul>
